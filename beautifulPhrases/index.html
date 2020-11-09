@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генератор красивых фраз</title>
+    <script>
+        function makePhrases(){
+            let word1 = ["24/7", "multi-tier", "30.000 foot", "B-to-B", "win-win"];
+            let word2 = ["empowered", "value-added", "oriented", "focused", "aligned"];
+            let word3 = ["process", "solution", "tipping-point", "strategy", "vision"];
+
+            let rand1 = Math.floor(Math.random() * word1.length);
+            let rand2 = Math.floor(Math.random() * word2.length);
+            let rand3 = Math.floor(Math.random() * word3.length);
+            
+            let phrase = word1[rand1] + ' ' + word2[rand2] + " " + word3[rand3];
+
+            alert(phrase);
+        }
+        let scores = [
+            60, 50, 60, 58, 54, 54,
+            58, 50, 52, 54, 48, 69,
+            34, 55, 51, 52, 44, 51,
+            69, 64, 66, 55, 52, 61,
+            46, 31, 57, 52, 44, 18,
+            41, 53, 55, 61, 51, 44
+        ];
+        function report(scores) {
+            let output;
+            let maxScore = 0;
+            let bestSolutions = [];
+            for(let i = 0; i < scores.length; i++){
+                output = 'Bubble solution #' + i + ' score: ' + scores[i];
+                if(maxScore < scores[i]) maxScore = scores[i];
+                console.log(output);
+            }
+
+            for(let i = 0; i < scores.length; i++){
+                if(scores[i] === maxScore) bestSolutions.push(i);
+            }
+            output = 'Total test: ' + scores.length + '\nHieght score: ' + maxScore;
+            console.log(output);
+            console.log('Solution with the hieght score: ' + bestSolutions);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
